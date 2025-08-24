@@ -47,3 +47,7 @@ Thumbs.db
 !.dev.vars.example
 .env*
 !.env.example
+
+# Other environment files
+environments/*
+!environments/environment.ts

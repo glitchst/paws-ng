@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
-import { faTwitter, faBluesky, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { environment } from '../../environments/environment';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, RouterLink],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css'
 })
 export class Homepage {
-  public faTwitter = faTwitter;
-  public faDiscord = faDiscord;
-  public faBluesky = faBluesky;
+  public socialLinks = environment.socialLinks;
+
+  constructor(private router: Router) {}
+
+  public async navigateToGallery(): Promise<boolean> {
+    return await this.router.navigate(['gallery']);
+  }
 }

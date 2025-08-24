@@ -1,1 +1,28 @@
-<p>footer works!</p>
+<footer class="bg-purple-900 text-white py-10 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
+
+    <!-- Logo + Socials -->
+    <div class="flex flex-col items-center md:items-start space-y-4">
+      <!-- Logo -->
+      <!-- @TODO: find logo and replace -->
+<!--      <img src="assets/logo.png" alt="logo" class="w-16 h-16 mx-auto md:mx-0" />-->
+
+      <!-- Social icons -->
+      <div class="flex space-x-4 text-xl text-white">
+        @for(socialLink of socialLinks; track socialLink.url)
+        {
+          <a href="{{socialLink.url}}" target="_blank" class="hover:text-pink-400 transition">
+            <fa-icon [icon]="socialLink.faIcon" />
+          </a>
+        }
+      </div>
+
+      <p class="text-sm">©2025 macintosh<br>All rights reserved.</p>
+    </div>
+  </div>
+
+  <!-- Bottom Disclaimer -->
+  <div class="mt-10 text-center text-xs text-gray-300">
+    <p>COMMERCIAL USE AND/OR COPYING OF MEDIA ON THIS SITE IS PROHIBITED</p>
+  </div>
+</footer>

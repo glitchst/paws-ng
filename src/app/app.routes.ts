@@ -1,19 +1,19 @@
 import { Routes } from '@angular/router';
 import { Homepage } from './homepage/homepage';
-import { Footer } from './layout/footer/footer';
+import {AboutMe} from './about-me/about-me';
+import {Gallery} from './gallery/gallery';
 
 export const routes: Routes = [
   {
     path: '',
     component: Homepage
   },
-  /** @TODO: Change this stuff */
   {
     path: 'about',
-    component: Homepage
+    component: AboutMe
   },
   {
     path: 'gallery',
-    component: Homepage
+    component: Gallery
   }
 ];

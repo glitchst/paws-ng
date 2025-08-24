@@ -4,12 +4,16 @@
   <p class="text-gray-700 font-medium">serial commissioner and stupid deer!</p>
 
   <div class="flex space-x-4 mt-4 text-pink-600">
-    <a href="#"><fa-icon [icon]="faBluesky" /></a>
-    <a href="#"><fa-icon [icon]="faTwitter" /></a>
-    <a href="#"><fa-icon [icon]="faDiscord" /></a>
+    @for(socialLink of socialLinks; track socialLink.url)
+    {
+      <a href="{{socialLink.url}}" target="_blank"><fa-icon [icon]="socialLink.faIcon" /></a>
+    }
   </div>
 
-  <button class="mt-6 bg-sky-400 hover:bg-sky-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg cursor-pointer">
+  <button
+    class="mt-6 bg-sky-400 hover:bg-sky-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg cursor-pointer"
+    (click)="navigateToGallery()"
+  >
     🎨 Go to Gallery
   </button>
 </section>
@@ -23,9 +27,16 @@
 <section class="bg-pink-200 py-12 text-center px-6">
   <h2 class="text-2xl font-bold mb-4">About me!</h2>
   <p class="max-w-2xl mx-auto text-gray-800 leading-relaxed">
-    Hi! I’m <span class="font-bold">mac</span> (or macintosh), big <span class="font-bold">stupid and gay!</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Hi! I’m <span class="font-bold">mac</span> (or macintosh), and I'm also big <span class="font-bold">stupid and gay!</span>
+    I love commissioning art of my various sonas (see
+      <a routerLink="/gallery" class="font-bold text-indigo-500 hover:text-indigo-300 transition duration-300 ease-in-out">gallery</a>
+    for more info and art)!
+    Other than that, thank you for checking out my website. It's kind of a passion project/practice. The source code will be
+    available on GitHub once everything is finished.
   </p>
-  <p class="mt-4 max-w-2xl mx-auto text-gray-800 leading-relaxed">
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  <p class="mt-4 max-w-2xl mx-auto text-gray-800 leading-relaxed text-sm">
+    If you'd like to know, this project was born out of frustration for a good solution to make a simple gallery/about me
+    page that would let me customize it to add the features I wanted. As they say, <span class="italic">if you want something
+    done properly, do it yourself.</span>
   </p>
 </section>
